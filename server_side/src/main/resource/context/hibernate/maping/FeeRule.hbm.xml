@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sunset.model">
+	<class name="FeeRule" table="T_FEERULE" lazy="false">
+		<id name="ruleId" type="java.lang.String" column="ruleId">
+		</id>
+		<property name="type" column="type" type="java.lang.String" />
+		<property name="carType" column="carType" type="java.lang.String" />
+		<property name="parkId" column="parkId" type="java.lang.String" />
+		<property name="freeTime" column="freeTime" type="java.lang.String" />
+		<property name="maxFee" column="maxFee" type="java.lang.String" />
+		<property name="firstTime" column="firstTime" type="java.lang.String" />
+		<property name="firstPrice" column="firstPrice" type="java.lang.String" />
+		<property name="spaceTime" column="spaceTime" type="java.lang.String" />
+		<property name="spacePrice" column="spacePrice" type="java.lang.String" />
+	</class>
+	
+</hibernate-mapping>

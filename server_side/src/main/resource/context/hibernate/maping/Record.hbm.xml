@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sunset.model">
+	<class name="Record" table="T_RECORD" lazy="false">
+		<id name="recordId" type="java.lang.String" column="recordId">
+		</id>
+		<property name="parkId" column="parkId" type="java.lang.String" />
+		<property name="parkName" column="parkName" type="java.lang.String" />
+		<property name="parkCode" column="parkCode" type="java.lang.String" />
+		<property name="departmentId" column="departmentId" type="java.lang.String" />
+		<property name="entryImg" column="entryImg" type="java.lang.String" />
+		<property name="exportImg" column="exportImg" type="java.lang.String" />
+		<property name="carId" column="carId" type="java.lang.String" />
+		<property name="entry" column="entry" type="java.lang.String" />
+		<property name="entryTime" column="entryTime" type="java.lang.String" />
+		<property name="export" column="export" type="java.lang.String" />
+		<property name="exportTime" column="exportTime" type="java.lang.String" />
+		
+		<property name="shouldAmt" column="shouldAmt" type="java.lang.String" />
+		<property name="realAmt" column="realAmt" type="java.lang.String" />
+		<property name="freeTime" column="freeTime" type="java.lang.String" />
+		<property name="userId" column="userId" type="java.lang.String" />
+		<property name="name" column="name" type="java.lang.String" />
+		<property name="type" column="type" type="java.lang.String" />
+		<property name="description" column="description" type="java.lang.String" />
+		<property name="status" column="status" type="java.lang.String" />
+		
+	</class>
+	
+	 
+</hibernate-mapping>

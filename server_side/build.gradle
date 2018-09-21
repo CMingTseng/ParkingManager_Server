@@ -1,0 +1,53 @@
+apply plugin: 'application'
+apply plugin: 'idea'
+
+def unpackedDistsDir = file("${buildDir}/distributions-unpacked")
+def distName = 'ParkingManager Server'
+mainClassName = 'com.sunset.parking.server'
+applicationName = 'ParkingManager Server'
+//outputDir = new File(project.buildDir, 'tmp')
+//classpath = jar.outputs.files + project.configurations.runtime
+
+//applicationDefaultJvmArgs = ["-DRpcServerPort=${RpcServerPort}"]
+startScripts.enabled = false
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+}
+
+
+idea {
+    module {
+        // The whole build dir is excluded by default, but we need build/generated-sources,
+        // which contains the generated proto classes.
+        excludeDirs = [file('.gradle')]
+        if (buildDir.exists()) {
+            excludeDirs += files(buildDir.listFiles())
+            excludeDirs -= file("$buildDir/generated-sources")
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.2'
+    resolutionStrategy {
+        failOnVersionConflict()
+        preferProjectModules()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'javax.annotation:javax.annotation-api:1.2'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'com.google.guava:guava:20.0'
+
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

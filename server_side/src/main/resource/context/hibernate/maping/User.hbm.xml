@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sunset.model">
+	<class name="User" table="T_USER" lazy="false">
+		<id name="userId" type="java.lang.String" column="userId">
+		</id>
+		<property name="name" column="name" type="java.lang.String" />
+		<property name="account" column="account" type="java.lang.String" />
+		<property name="password" column="password" type="java.lang.String" />
+		<property name="departmentId" column="departmentId" type="java.lang.String" />
+		<property name="sex" column="sex" type="java.lang.String" />
+		<property name="rank" column="rank" type="java.lang.String" />
+		<property name="telephone" column="telephone" type="java.lang.String" />
+		<property name="power" column="power" type="java.lang.String" />
+		<property name="status" column="status" type="java.lang.String" />
+		<property name="description" column="description" type="java.lang.String" />
+	</class>
+	
+</hibernate-mapping>

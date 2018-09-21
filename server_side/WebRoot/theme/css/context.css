@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+ 
+ 
+/*-----------------------------------------------------dialog------------------------*/
+ 
+.g_dialog {
+position: absolute;
+left: auto;
+top: auto;
+right: 30px;
+bottom: 0;
+width: 562px;
+-webkit-box-shadow: 0 0 20px -2px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 20px -2px rgba(0,0,0,0.5);
+-ms-box-shadow: 0 0 20px -2px rgba(0,0,0,0.5);
+box-shadow: 0 0 20px -2px rgba(0, 0, 0, 0.5);
+border: 1px solid #6D7A89;
+z-index: 9999;
+background-color: white;
+}
+.dialog_head {
+background-color: #14A7D5;
+border-bottom: 1px solid #6D7A89;
+height: 39px; 
+font-weight: bold;
+line-height: 39px;
+color: white;
+cursor: move;
+}
+.dialog_sprite{
+ background: url('../image/sprite_dialog.gif') 0 0 no-repeat;
+}
+.dialog_head_bg {
+ background-repeat: repeat-x;
+}
+
+.dialog_close {
+position: absolute;
+right: 10px;
+top: 11px;
+background-position: 0 -177px;
+width: 18px;
+height: 18px;
+border-radius: 2px;
+}
+.dialog_resize {
+	position: absolute;
+	right: 40px;
+	top: 11px;
+	background-position: 0 -162px;
+	width: 18px;
+	height: 18px;
+	border-radius: 2px;
+}
+.g_dialog .ico_close_d:hover {
+background-position: -54px -240px;
+}
+.dialog_inner {
+border-radius: 0px 0px 5px 5px;
+overflow: hidden;
+}
+.dialog_content {
+background-color: white;
+}
+.dialog_operate {
+background-color: #EAEAEA;
+padding: 5px 0px;
+border-top: 1px solid #CCC;
+}
+
+
+/*--------------------------controlpanel-----------------------------------*/
+
+.controlpanel{
+    height: 80px;
+	line-height: 80px;
+	border: 1px solid #14A7D5;
+	margin-right: 10px;
+	width: 99%;
+}
+.controlpanel label{
+   	width: 60px;
+	padding-left: 10px;
+}
+ .controlpanel input{
+   height:30px;
+}

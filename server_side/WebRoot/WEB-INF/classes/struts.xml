@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts-devModel" value="true" />
+	<constant name="struts.action.extension" value="php,do" />
+	<constant name="struts.multipart.maxSize" value="100000000"/> 
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="admin" extends="struts-default" namespace="/admin">
+		<action name="portal_*" class="com.sunset.admin.action.AdminPortalAction" method="{1}">
+		  <result name="manage" type="dispatcher">/admin/PortalManage.jsp</result>
+		  <result name="list" type="dispatcher">/admin/PortalList.jsp</result>
+		</action>
+		<action name="user_*" class="com.sunset.admin.action.AdminUserAction" method="{1}">
+		  <result name="manage" type="dispatcher">/admin/UserManage.jsp</result>
+		  <result name="list" type="dispatcher">/admin/UserList.jsp</result>
+		  <result name="edit" type="dispatcher">/admin/UserEdit.jsp</result>
+		  <result name="login_success" type="redirect">manage.jsp</result>
+		  <result name="login_failed" type="dispatcher">/admin/login.jsp</result>
+		  <result name="login_view" type="dispatcher">/admin/login.jsp</result>
+		</action>
+        <action name="record_*" class="com.sunset.admin.action.AdminRecordAction" method="{1}">
+           <result name="Frecordlist" type="dispatcher">/admin/FullRecordList.jsp</result>
+           <result name="Arecordlist" type="dispatcher">/admin/ActiveRecordList.jsp</result>
+           <result name="chargelist" type="dispatcher">/admin/ChargeList.jsp</result>
+        </action>
+         <action name="department_*" class="com.sunset.admin.action.AdminDepartmentAction" method="{1}">
+           <result name="manage" type="dispatcher">/admin/DepartmentManage.jsp</result>
+            <result name="view" type="dispatcher">/admin/DepartmentView.jsp</result>
+        </action>
+        <action name="config_*" class="com.sunset.admin.action.AdminConfigAction" method="{1}">
+		  <result name="manage" type="dispatcher">/admin/ConfigManage.jsp</result>
+		</action>
+		<action name="park_*" class="com.sunset.admin.action.AdminStrongholdAction" method="{1}">
+		  <result name="manage" type="dispatcher">/admin/StrongholdManage.jsp</result>
+		  <result name="parkList" type="dispatcher">/admin/ParkList.jsp</result>
+		  <result name="sentryList" type="dispatcher">/admin/SentryList.jsp</result>
+		</action>
+		<action name="cashier_*" class="com.sunset.admin.action.AdminCashierAction" method="{1}">
+		  <result name="list" type="dispatcher">/admin/CashierList.jsp</result>
+		</action>
+		<action name="feeRule_*" class="com.sunset.admin.action.AdminFeeRuleAction" method="{1}">
+		  <result name="list" type="dispatcher">/admin/FeeRuleList.jsp</result>
+		</action>
+		<action name="vip_*" class="com.sunset.admin.action.AdminVipCarAction" method="{1}">
+		  <result name="list" type="dispatcher">/admin/VipCarList.jsp</result>
+		</action>
+	</package> 
+	
+	<package name="api" extends="struts-default" namespace="/api">
+		<action name="cashier_*" class="com.sunset.api.action.APICashierAction" method="{1}"></action>
+		<action name="record_*" class="com.sunset.api.action.APIRecordAction" method="{1}"></action>
+		<action name="portal_*" class="com.sunset.api.action.APIPortalAction" method="{1}"></action>
+		<action name="feeRule_*" class="com.sunset.api.action.APIFeeRuleAction" method="{1}"></action>
+		<action name="vip_*" class="com.sunset.api.action.APIVipCarAction" method="{1}"></action>
+	</package> 
+</struts>

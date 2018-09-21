@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sunset.model">
+	<class name="VipCar" table="T_VipCar" lazy="false">
+		<id name="vipId" type="java.lang.String" column="vipId">
+		</id>
+		<property name="carCode" column="carCode" type="java.lang.String" />
+		<property name="parkId" column="parkId" type="java.lang.String" />
+		<property name="expireTime" column="expireTime" type="java.lang.String" />
+        <property name="description" column="description" type="java.lang.String" />
+	</class>
+</hibernate-mapping>

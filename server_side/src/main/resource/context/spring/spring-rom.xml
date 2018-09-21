@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	  http://www.springframework.org/schema/beans 
+	  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	  http://www.springframework.org/schema/tx 
+	  http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	  http://www.springframework.org/schema/aop 
+	  http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	"
+	>
+	
+	<bean id="userDaoImpl" class="com.sunset.core.dao.impl.UserDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="recordDaoImpl" class="com.sunset.core.dao.impl.RecordDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+ 
+	<bean id="configDaoImpl" class="com.sunset.core.dao.impl.ConfigDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="portalDaoImpl" class="com.sunset.core.dao.impl.PortalDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+    <bean id="departmentDaoImpl" class="com.sunset.core.dao.impl.DepartmentDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="strongholdDaoImpl" class="com.sunset.core.dao.impl.StrongholdDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="cashierDaoImpl" class="com.sunset.core.dao.impl.CashierDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="feeRuleDaoImpl" class="com.sunset.core.dao.impl.FeeRuleDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="vipDaoImpl" class="com.sunset.core.dao.impl.VipCarDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="userServiceImpl" class="com.sunset.core.service.impl.UserServiceImpl">
+	         <property name="userDao" ref="userDaoImpl"/>
+	</bean>
+	<bean id="recordServiceImpl" class="com.sunset.core.service.impl.RecordServiceImpl">
+	         <property name="recordDao" ref="recordDaoImpl"/>
+	</bean>
+	
+	<bean id="configServiceImpl" class="com.sunset.core.service.impl.ConfigServiceImpl">
+	         <property name="configDao" ref="configDaoImpl"/>
+	</bean>
+ 
+    <bean id="portalServiceImpl" class="com.sunset.core.service.impl.PortalServiceImpl">
+	         <property name="portalDao" ref="portalDaoImpl"/>
+	</bean>
+	 
+    <bean id="departmentServiceImpl" class="com.sunset.core.service.impl.DepartmentServiceImpl">
+	         <property name="departmentDao" ref="departmentDaoImpl"/>
+	</bean>
+	 <bean id="strongholdServiceImpl" class="com.sunset.core.service.impl.StrongholdServiceImpl">
+	         <property name="strongholdDao" ref="strongholdDaoImpl"/>
+	</bean>
+	 <bean id="cashierServiceImpl" class="com.sunset.core.service.impl.CashierServiceImpl">
+	         <property name="cashierDao" ref="cashierDaoImpl"/>
+	</bean>
+	
+	 <bean id="ruleServiceImpl" class="com.sunset.core.service.impl.FeeRuleServiceImpl">
+	         <property name="feeRuleDao" ref="feeRuleDaoImpl"/>
+	</bean>
+	 <bean id="vipServiceImpl" class="com.sunset.core.service.impl.VipCarServiceImpl">
+	         <property name="vipDao" ref="vipDaoImpl"/>
+	</bean>
+</beans>

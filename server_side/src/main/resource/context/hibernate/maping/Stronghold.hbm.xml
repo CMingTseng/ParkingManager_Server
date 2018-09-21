@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sunset.model">
+	<class name="Stronghold" table="T_STRONGHOLD" lazy="false">
+		<id name="parkId" type="java.lang.String" column="parkId">
+		</id>
+		<property name="name" column="name" type="java.lang.String" />
+		<property name="parentId" column="parentId" type="java.lang.String" />
+        <property name="code" column="code" type="java.lang.String" />
+		<property name="type" column="type" type="java.lang.String" />
+		<property name="region" column="region" type="java.lang.String" />
+	</class>
+</hibernate-mapping>
